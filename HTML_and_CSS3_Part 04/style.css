@@ -60,7 +60,7 @@ nav a:hover {
 }
 
 .produtos li:active {
-	border-color: #088C19;	
+	border-color: #088C19;
 }
 
 .produtos li:hover h2 {
@@ -94,16 +94,13 @@ footer {
 	margin: 20px 0 0;
 }
 
-main {
-	
-}
-
 form {
 	margin: 40px 0;
 }
 
-form label, form legend {
-	display:block;
+form label,
+form legend {
+	display: block;
 	font-size: 20px;
 	margin: 0 0 10px;
 }
@@ -120,7 +117,7 @@ form label, form legend {
 }
 
 .enviar {
-	width:40%;
+	width: 40%;
 	padding: 15px 0;
 	background: orange;
 	color: white;
@@ -147,7 +144,8 @@ thead {
 	font-weight: bold;
 }
 
-td, th {
+td,
+th {
 	border: 1px solid #000000;
 	padding: 8px 15px;
 }
@@ -155,7 +153,7 @@ td, th {
 
 /* css da página inicial */
 .banner {
-	width:100%;
+	width: 100%;
 }
 
 .titulo-principal {
@@ -250,7 +248,12 @@ td, th {
 }
 
 @media screen and (max-width: 480px) {
-	.caixa, .principal, .conteudo-beneficios, .mapa-conteudo, .video {
+
+	.caixa,
+	.principal,
+	.conteudo-beneficios,
+	.mapa-conteudo,
+	.video {
 		width: auto;
 	}
 
@@ -262,7 +265,8 @@ td, th {
 		position: static;
 	}
 
-	.lista-beneficios, .imagem-beneficios {
+	.lista-beneficios,
+	.imagem-beneficios {
 		width: 100%;
 	}
 }
