@@ -1,27 +1,16 @@
 import { Cliente } from "./Cliente.js";
 import { ContaCorrente } from "./ContaCorrente.js";
 // Cliente é o objeto
-const cliente1 = new Cliente();
-cliente1.nome = "Ricardo";
-cliente1.cpf = 11122233309;
-
-const cliente2 = new Cliente();
-cliente2.nome = "Alice";
-cliente2.cpf = 88822233309;
-
-const contaCorrenteRicardo = new ContaCorrente();
-contaCorrenteRicardo.agencia = 1001;
-contaCorrenteRicardo.cliente = cliente1;
+const cliente1 = new Cliente("Mikhael" , 11196738955);
+const cliente2 = new Cliente("Alice" , 88822233309);
+let numeroDeContas = 0;
+const contaCorrenteRicardo = new ContaCorrente(cliente1 , 1001);
 contaCorrenteRicardo.depositar(1250);
-
-console.log(contaCorrenteRicardo);
-
-const conta2 = new ContaCorrente();
-conta2.cliente = cliente2;
-conta2.agencia = 1021
+const contaCorrenteAlice = new ContaCorrente(cliente2 , 1021);
 
 let valor = 200;
-contaCorrenteRicardo.transferir(valor, conta2);
+contaCorrenteRicardo.transferir(valor, contaCorrenteAlice);
 
-console.log("Valor: ", valor)
-console.log(conta2);
+console.log(contaCorrenteRicardo);
+console.log(contaCorrenteAlice);
+console.log("Numero total de contas criadas: " , ContaCorrente.numeroDeContas);
