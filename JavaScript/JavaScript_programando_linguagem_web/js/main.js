@@ -1,38 +1,47 @@
-let titulo = document.querySelector(".titulo");
+var titulo = document.querySelector(".titulo");
 titulo.textContent = "Aparecida Nutricionista";
 
-let paciente = document.querySelectorAll(".paciente");
-// Retorna array e lenght = tamanho
+var pacientes = document.querySelectorAll(".paciente");
+console.log(paciente);
+// Retorna array
+// lenght = tamanho
 
-for (var i = 0; i < paciente.lenght; i++) {
+var pacientes = document.querySelectorAll(".paciente");
 
-    let paciente = paciente[i]; // chamando array para indicar todos os pacientes
-
+for (var i = 0; i < pacientes.length; i++) {
+    var paciente = pacientes[i];
     var tdPeso = paciente.querySelector(".info-peso");
-    var peso = tdPeso.textContent;
-
     var tdAltura = paciente.querySelector(".info-altura");
+
+    var tdImc = paciente.querySelector(".info-imc");
+
+    var peso = tdPeso.textContent;
     var altura = tdAltura.textContent;
 
-    var tdImc = paciente.querySelector('.info-imc');
+    var alturaEhValida = true;
+    var pesoEhValido = true;
 
-    var pesoValido = true;
-    var alturaValida = true;
-
-    if (peso <= 0 || peso >= 400) {
+    if (peso <= 0 || peso >= 1000) {
         console.log("Peso inválido");
-        pesoValido = false;
-        tdImc.textContent = "Peso inválido";
+        tdImc.textContent = "Peso inválido!";
+        pesoEhValido = false;
+
+        paciente.classList.add("paciente-invalido");
     }
-    if (altura <= 0 || altura >= 3) {
+
+    if (altura <= 0 || altura >= 3.0) {
         console.log("Altura inválida");
-        alturaValida = false;
-        tdImc.textContent = "Altura inválida";
+        tdImc.textContent = "Altura inválida!";
+        alturaEhValida = false;
+
+        paciente.classList.add("paciente-invalido");
     }
 
-    if (alturaValida && pesoValido) {
+    if (pesoEhValido && alturaEhValida) {
         var imc = peso / (altura * altura);
-        tdImc.textContent = imc;
+        tdImc.textContent = imc.toFixed(2);
     }
-
 }
+
+var botaoAdicionar = document.querySelector("#adicionar-paciente");
+console.log(botaoAdicionar);
